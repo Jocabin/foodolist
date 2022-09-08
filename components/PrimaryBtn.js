@@ -2,9 +2,13 @@ import React from "react";
 import { Pressable, Text, StyleSheet } from "react-native";
 import Colors from "../constants/Colors";
 
-function PrimaryBtn({ children }) {
+function PrimaryBtn({ children, click }) {
   return (
-    <Pressable style={styles.primaryButton} title={"test button"}>
+    <Pressable
+      onPress={click}
+      style={styles.primaryButton}
+      title={"test button"}
+    >
       <Text style={styles.primaryButtonText}>{children}</Text>
     </Pressable>
   );
