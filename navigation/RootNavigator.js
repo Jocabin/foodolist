@@ -16,6 +16,8 @@ function RootNavigator() {
   const screenDefaultOptions = {
     animation: "slide_from_right",
     headerShadowVisible: false,
+    headerStyle: styles.header,
+    headerTitle: "",
   };
 
   return (
@@ -26,7 +28,6 @@ function RootNavigator() {
           component={Home}
           options={{
             ...screenDefaultOptions,
-            headerStyle: styles.header,
             headerTitle: () => <Logo />,
             headerRight: () => (
               <TextButton
@@ -42,7 +43,18 @@ function RootNavigator() {
         <Stack.Screen
           name="NewRecipe"
           component={NewRecipe}
-          options={{ ...screenDefaultOptions }}
+          options={{
+            ...screenDefaultOptions,
+            headerRight: () => (
+              <TextButton
+                click={() => {
+                  alert("added");
+                }}
+              >
+                Enregistrer la recette
+              </TextButton>
+            ),
+          }}
         />
       </Stack.Group>
     </Stack.Navigator>

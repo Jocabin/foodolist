@@ -1,8 +1,5 @@
 import React from "react";
-import Logo from "../components/Logo";
 import { StyleSheet, View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import PrimaryBtn from "../components/PrimaryBtn";
 import Colors from "../constants/Colors";
 
 function Home() {
