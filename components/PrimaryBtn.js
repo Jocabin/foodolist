@@ -2,22 +2,22 @@ import React from "react";
 import { Pressable, Text, StyleSheet } from "react-native";
 import Colors from "../constants/Colors";
 
-function PrimaryBtn({ children }) {
+function PrimaryBtn({ children, click }) {
   return (
-    <Pressable style={styles.primaryButton} title={"test button"}>
-      <Text style={styles.primaryButtonText}>{children}</Text>
+    <Pressable onPress={click} style={styles.button}>
+      <Text style={styles.text}>{children}</Text>
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
-  primaryButton: {
+  button: {
     backgroundColor: Colors.accent,
     padding: 16,
     borderRadius: 24,
     width: "100%",
   },
-  primaryButtonText: {
+  text: {
     color: "#fff",
     textAlign: "center",
   },
