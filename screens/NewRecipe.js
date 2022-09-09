@@ -6,10 +6,10 @@ import PrimaryBtn from "../components/PrimaryBtn";
 
 function NewRecipe() {
   function addRecipe() {
-    const document = doc(database, "recipes", "testdoc");
+    const document = doc(database, "recipes", "dddd");
     const documentData = {
-      title: "Salade",
-      ingredients: ["Tomates", "Sel"],
+      title: "Test",
+      ingredients: ["dddddd", "d"],
     };
 
     setDoc(document, documentData)
