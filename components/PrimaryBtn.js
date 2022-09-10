@@ -1,10 +1,12 @@
 import React from "react";
 import { Pressable, Text, StyleSheet } from "react-native";
 import Colors from "../constants/Colors";
+import GlobalStyles from "../constants/GlobalStyles";
 
 function PrimaryBtn({ children, click }) {
   return (
-    <Pressable onPress={click} style={styles.button}>
+    //  FIXME: shadow
+    <Pressable onPress={click} style={[styles.button, GlobalStyles.shadow]}>
       <Text style={styles.text}>{children}</Text>
     </Pressable>
   );

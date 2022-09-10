@@ -1,61 +1,69 @@
-import React, { useEffect, useState } from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import React, {useEffect, useState} from "react";
+import {SafeAreaView, FlatList, StyleSheet, Text, View} from "react-native";
 import Colors from "../constants/Colors";
-import { database } from "../core/Config";
-import { collection, getDocs } from "firebase/firestore";
+import {database} from "../core/Config";
+import {ref, child, get} from "firebase/database";
 import RecipeTile from "../components/RecipeTile";
 
 function Home() {
-  const [recipes, setRecipes] = useState([]);
+    const [recipes, setRecipes] = useState([]);
 
-  useEffect(() => {
-    getRecipes();
-  });
+    useEffect(() => {
+        getRecipes();
+    });
 
-  function getRecipes() {
-    const collectionRef = collection(database, "recipes");
+    function getRecipes() {
+        get(child(ref(database), "recipes/"))
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    let recipesDoc = [];
 
-    getDocs(collectionRef)
-      .then((snapshot) => {
-        if (snapshot) {
-          let recipesDocument = [];
+                    snapshot.forEach((doc) => {
+                        recipesDoc = [...recipesDoc, doc.val()];
+                    });
 
-          snapshot.forEach((doc) => {
-            recipesDocument = [...recipesDocument, doc.data()];
-          });
+                    setRecipes(recipesDoc);
+                }
+            })
+            .catch((error) => {
+                alert(error);
+            });
+    }
 
-          setRecipes(recipesDocument);
-        }
-      })
-      .catch((error) => {
-        alert(error);
-      });
-  }
+    function renderRecipes({item}) {
+        return (
+            <RecipeTile
+                id={recipes[item].id}
+                title={recipes[item].title}
+                tags={recipes[item].tags}
+                click={}
+            />
+        );
+    }
 
-  function renderRecipes({ item }) {
     return (
-      <RecipeTile
-        id={recipes[item].title}
-        title={recipes[item].title}
-        tags={"tet"}
-      />
+        <View style={styles.homePage}>
+            <SafeAreaView style={styles.list}>
+                <FlatList
+                    data={Object.keys(recipes)}
+                    renderItem={renderRecipes}
+                    keyExtractor={(item) => recipes[item].id}
+                />
+            </SafeAreaView>
+        </View>
     );
-  }
-
-  return (
-    <View style={styles.homePage}>
-      <FlatList data={Object.keys(recipes)} renderItem={renderRecipes} />
-    </View>
-  );
 }
 
 const styles = StyleSheet.create({
-  homePage: {
-    backgroundColor: Colors.background,
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "flex-start",
-  },
+    homePage: {
+        flex: 1,
+        backgroundColor: Colors.background,
+        alignItems: "center",
+        justifyContent: "flex-start",
+    },
+    list: {
+        width: "100%",
+    },
 });
 
 export default Home;

@@ -1,23 +1,23 @@
 import React from "react";
 import { View, Text } from "react-native";
 import { database } from "../core/Config";
-import { doc, setDoc } from "firebase/firestore";
+import { ref, set } from "firebase/database";
 import PrimaryBtn from "../components/PrimaryBtn";
+import { random } from "../constants/utils";
 
 function NewRecipe() {
   function addRecipe() {
-    const document = doc(database, "recipes", "dddd");
-    const documentData = {
-      title: "Test",
-      ingredients: ["dddddd", "d"],
-    };
-
-    setDoc(document, documentData)
+    set(ref(database, "recipes/" + random(0, 20)), {
+      id: Date.now(),
+      title: "Salade",
+      ingredients: ["Tomates", "Concombres"],
+      tags: ["Froid", "Lait"],
+    })
       .then(() => {
         alert("added");
       })
       .catch((error) => {
-        alert(error.message);
+        alert(error);
       });
   }
 
