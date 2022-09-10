@@ -1,12 +1,10 @@
 import React from "react";
-import {View, Text, StyleSheet} from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
 function RecipeTile() {
-    return (
-
-    )
+  return <Text>Test</Text>;
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
 
-export default RecipeTile
+export default RecipeTile;
