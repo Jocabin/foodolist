@@ -3,6 +3,7 @@ import { FlatList, StyleSheet, Text, View } from "react-native";
 import Colors from "../constants/Colors";
 import { database } from "../core/Config";
 import { collection, getDocs } from "firebase/firestore";
+import RecipeTile from "../components/RecipeTile";
 
 function Home() {
   const [recipes, setRecipes] = useState([]);
@@ -32,7 +33,13 @@ function Home() {
   }
 
   function renderRecipes({ item }) {
-    return <Text>{recipes[item].title}</Text>;
+    return (
+      <RecipeTile
+        id={recipes[item].title}
+        title={recipes[item].title}
+        tags={"tet"}
+      />
+    );
   }
 
   return (
