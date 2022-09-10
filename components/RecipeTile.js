@@ -3,16 +3,29 @@ import { View, Text, StyleSheet } from "react-native";
 import PrimaryBtn from "./PrimaryBtn";
 import Colors from "../constants/Colors";
 import GlobalStyles from "../constants/GlobalStyles";
+import { useNavigation } from "@react-navigation/native";
 
-function RecipeTile({ id, title, tags, click }) {
+function RecipeTile({ recipe }) {
+  const navigation = useNavigation();
+
   return (
-    //  FIXME: shadow
     <View style={[styles.container, GlobalStyles.shadow]}>
       <View>
-        <Text style={styles.title}>{title}</Text>
-        <Text>{tags}</Text>
+        <Text style={styles.title}>{recipe.title}</Text>
+        <Text>{recipe.tags}</Text>
       </View>
-      <PrimaryBtn click={click}>Voir la recette</PrimaryBtn>
+      <PrimaryBtn
+        click={() => {
+          navigation.navigate("ViewRecipe", {
+            id: recipe.id,
+            title: recipe.title,
+            tags: recipe.tags,
+            ingredients: recipe.ingredients,
+          });
+        }}
+      >
+        Voir la recette
+      </PrimaryBtn>
     </View>
   );
 }

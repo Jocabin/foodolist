@@ -9,6 +9,12 @@ const GlobalStyles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 2,
   },
+  homePage: {
+    flex: 1,
+    backgroundColor: Colors.background,
+    alignItems: "center",
+    justifyContent: "flex-start",
+  },
 });
 
 export default GlobalStyles;
