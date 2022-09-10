@@ -19,7 +19,11 @@ export function addRecipe() {
     id: Date.now(),
     title: "Salade",
     ingredients: ["Tomates", "Concombres"],
-    tags: ["Froid", "Lait"],
+    tags: [
+      "Froid",
+      "Lait",
+      "ssssssssssssssssssssssssssssssssssssssssssssssssss",
+    ],
   })
     .then(() => {
       alert("added");

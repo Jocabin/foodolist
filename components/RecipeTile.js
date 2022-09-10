@@ -10,9 +10,15 @@ function RecipeTile({ recipe }) {
 
   return (
     <View style={[styles.container, GlobalStyles.shadow]}>
-      <View>
-        <Text style={styles.title}>{recipe.title}</Text>
-        <Text>{recipe.tags}</Text>
+      <View style={{ marginBottom: 48 }}>
+        <Text numberOfLines={1} style={styles.title}>
+          {recipe.title}
+        </Text>
+        <Text numberOfLines={1} style={styles.tags}>
+          {recipe.tags.map((tag) => {
+            return (tag === recipe.tags[0] ? "" : " - ") + tag;
+          })}
+        </Text>
       </View>
       <PrimaryBtn
         click={() => {
@@ -42,11 +48,17 @@ const styles = StyleSheet.create({
     marginTop: 24,
     borderRadius: 16,
     marginHorizontal: 24,
+    overflow: "hidden",
   },
   title: {
     fontSize: 32,
     fontWeight: "500",
     color: Colors.text,
+    marginBottom: 16,
+  },
+  tags: {
+    fontWeight: "500",
+    fontSize: 18,
   },
 });
 

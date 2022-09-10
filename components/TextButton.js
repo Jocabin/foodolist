@@ -4,6 +4,7 @@ import Colors from "../constants/Colors";
 
 function TextButton({ children, click }) {
   return (
+    //TODO fontsize
     <Pressable style={styles.button} onPress={click}>
       <Text style={styles.text}>{children}</Text>
     </Pressable>
