@@ -14,8 +14,12 @@ function TextButton({ children, click }) {
 const styles = StyleSheet.create({
   text: {
     color: Colors.accent,
+    fontWeight: "500",
   },
-  button: {},
+  button: {
+    padding: 16,
+    paddingRight: 0,
+  },
 });
 
 export default TextButton;
