@@ -71,6 +71,4 @@ function RootNavigator() {
   );
 }
 
-const styles = StyleSheet.create({});
-
 export default RootNavigator;

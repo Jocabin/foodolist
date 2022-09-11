@@ -1,6 +1,7 @@
 import React from "react";
 import { Pressable, Text, StyleSheet } from "react-native";
 import Colors from "../constants/Colors";
+import Fonts from "../constants/Fonts";
 
 function TextButton({ children, click }) {
   return (
@@ -14,7 +15,8 @@ function TextButton({ children, click }) {
 const styles = StyleSheet.create({
   text: {
     color: Colors.accent,
-    fontWeight: "500",
+    fontWeight: Fonts.bold,
+    fontSize: Fonts.textSize,
   },
   button: {
     padding: 16,

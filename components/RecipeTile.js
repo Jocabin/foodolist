@@ -4,12 +4,13 @@ import PrimaryBtn from "./PrimaryBtn";
 import Colors from "../constants/Colors";
 import GlobalStyles from "../constants/GlobalStyles";
 import { useNavigation } from "@react-navigation/native";
+import Fonts from "../constants/Fonts";
 
 function RecipeTile({ recipe }) {
   const navigation = useNavigation();
 
   return (
-    <View style={[styles.container, GlobalStyles.shadow]}>
+    <View style={[styles.container]}>
       <View style={{ marginBottom: 48 }}>
         <Text numberOfLines={1} style={styles.title}>
           {recipe.title}
@@ -51,14 +52,14 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   title: {
-    fontSize: 32,
-    fontWeight: "500",
+    fontSize: Fonts.titleSize,
+    fontWeight: Fonts.bold,
     color: Colors.text,
     marginBottom: 16,
   },
   tags: {
-    fontWeight: "500",
-    fontSize: 18,
+    fontWeight: Fonts.bold,
+    fontSize: Fonts.textSize,
   },
 });
 

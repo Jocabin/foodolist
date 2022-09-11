@@ -2,6 +2,7 @@ import React from "react";
 import { Pressable, Text, StyleSheet } from "react-native";
 import Colors from "../constants/Colors";
 import GlobalStyles from "../constants/GlobalStyles";
+import Fonts from "../constants/Fonts";
 
 function PrimaryBtn({ children, click }) {
   return (
@@ -22,8 +23,8 @@ const styles = StyleSheet.create({
   text: {
     color: "#fff",
     textAlign: "center",
-    fontWeight: "500",
-    fontSize: 18,
+    fontWeight: Fonts.bold,
+    fontSize: Fonts.textSize,
   },
 });
 
