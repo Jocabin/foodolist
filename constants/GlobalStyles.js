@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import Colors from "../constants/Colors";
+import Fonts from "./Fonts";
 
 const GlobalStyles = StyleSheet.create({
   shadow: {
@@ -15,6 +16,21 @@ const GlobalStyles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
     paddingTop: 24,
+  },
+  title: {
+    fontWeight: Fonts.bold,
+    fontSize: Fonts.titleSize,
+    color: Colors.text,
+    marginBottom: 16,
+  },
+  text: {
+    fontSize: Fonts.textSize,
+    color: Colors.text,
+  },
+  tags: {
+    fontWeight: Fonts.bold,
+    fontSize: Fonts.textSize,
+    color: Colors.text,
   },
 });
 
