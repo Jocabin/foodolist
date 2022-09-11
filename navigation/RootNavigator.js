@@ -35,7 +35,7 @@ function RootNavigator() {
           }}
         />
         <Stack.Screen
-          name="NewRecipe"
+          name="EditRecipe"
           component={EditRecipe}
           options={{
             ...screenDefaultOptions,
