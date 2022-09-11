@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-function NewRecipe() {
+function EditRecipe() {
   return (
     <View>
       <Text>Recipe</Text>
@@ -9,4 +9,4 @@ function NewRecipe() {
   );
 }
 
-export default NewRecipe;
+export default EditRecipe;

@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "../screens/Home";
-import NewRecipe from "../screens/NewRecipe";
+import EditRecipe from "../screens/EditRecipe";
 import ViewRecipe from "../screens/ViewRecipe";
 import { StyleSheet, Text } from "react-native";
 import Logo from "../components/Logo";
@@ -26,7 +26,7 @@ function RootNavigator() {
             headerRight: () => (
               <TextButton
                 click={() => {
-                  navigation.navigate("NewRecipe");
+                  navigation.navigate("EditRecipe");
                 }}
               >
                 Nouvelle recette
@@ -36,7 +36,7 @@ function RootNavigator() {
         />
         <Stack.Screen
           name="NewRecipe"
-          component={NewRecipe}
+          component={EditRecipe}
           options={{
             ...screenDefaultOptions,
             headerRight: () => (

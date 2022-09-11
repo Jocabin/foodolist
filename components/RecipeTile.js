@@ -3,11 +3,11 @@ import { View, Text, StyleSheet } from "react-native";
 import PrimaryBtn from "./PrimaryBtn";
 import GlobalStyles from "../constants/GlobalStyles";
 import { useNavigation } from "@react-navigation/native";
-import Fonts from "../constants/Fonts";
 
 function RecipeTile({ recipe }) {
   const navigation = useNavigation();
 
+  //  FIXME: shadow
   return (
     <View style={[styles.container]}>
       <View style={{ marginBottom: 48 }}>

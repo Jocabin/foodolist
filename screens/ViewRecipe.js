@@ -7,6 +7,7 @@ import Ruler from "../components/Ruler";
 
 function ViewRecipe() {
   const route = useRoute();
+  //FIXME: key unique child
   return (
     <View style={[GlobalStyles.homePage, { padding: 24 }]}>
       <ScrollView style={styles.scroll}>
@@ -46,7 +47,6 @@ function ViewRecipe() {
 }
 
 const styles = StyleSheet.create({
-  // FIXME don't scroll on overflow, to reproduce, append ``height: 800``
   recipeCard: {
     padding: 32,
     backgroundColor: "#fff",
