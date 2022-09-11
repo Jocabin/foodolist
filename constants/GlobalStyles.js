@@ -14,6 +14,7 @@ const GlobalStyles = StyleSheet.create({
     backgroundColor: Colors.background,
     alignItems: "center",
     justifyContent: "flex-start",
+    paddingTop: 24,
   },
 });
 
