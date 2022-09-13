@@ -3,7 +3,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "../screens/Home";
 import EditRecipe from "../screens/EditRecipe";
 import ViewRecipe from "../screens/ViewRecipe";
-import { StyleSheet, Text } from "react-native";
 import Logo from "../components/Logo";
 import TextButton from "../components/TextButton";
 import { useNavigation } from "@react-navigation/native";
