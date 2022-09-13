@@ -4,10 +4,10 @@ import Fonts from "./Fonts";
 
 const GlobalStyles = StyleSheet.create({
   shadow: {
-    shadowColor: Colors.text,
-    shadowOpacity: 0.2,
+    shadowColor: Colors.shadow,
+    shadowOpacity: 0.5,
     shadowOffset: { width: 0, height: 16 },
-    shadowRadius: 4,
+    shadowRadius: 16,
     elevation: 2,
   },
   homePage: {

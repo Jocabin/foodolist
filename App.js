@@ -4,6 +4,7 @@ import Colors from "./constants/Colors";
 import { NavigationContainer } from "@react-navigation/native";
 import RootNavigator from "./navigation/RootNavigator";
 
+//FIXME: bottombar noire
 export default function App() {
   return (
     <NavigationContainer style={styles.appContainer}>

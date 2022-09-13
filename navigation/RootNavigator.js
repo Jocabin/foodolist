@@ -14,6 +14,8 @@ const Stack = createNativeStackNavigator();
 function RootNavigator() {
   const navigation = useNavigation();
 
+  //FIXME: iOS Header
+  //FIXME: iOS go back button
   return (
     <Stack.Navigator>
       <Stack.Group>
