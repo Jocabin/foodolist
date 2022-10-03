@@ -7,7 +7,6 @@ import { useNavigation } from "@react-navigation/native";
 function RecipeTile({ recipe }) {
   const navigation = useNavigation();
 
-  //  FIXME: shadow
   return (
     <View style={[styles.container]}>
       <View style={{ marginBottom: 48 }}>

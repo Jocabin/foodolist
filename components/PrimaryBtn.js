@@ -4,11 +4,23 @@ import Colors from "../constants/Colors";
 import GlobalStyles from "../constants/GlobalStyles";
 import Fonts from "../constants/Fonts";
 
-function PrimaryBtn({ children, click }) {
+function PrimaryBtn({ children, click, disabled }) {
   return (
-    //  FIXME: shadow
-    <Pressable onPress={click} style={[styles.button, GlobalStyles.shadow]}>
-      <Text style={styles.text}>{children}</Text>
+    <Pressable
+      disabled={disabled}
+      onPress={click}
+      style={[
+        styles.button,
+        GlobalStyles.shadow,
+        disabled ? { backgroundColor: Colors.disabled } : {},
+      ]}
+    >
+      <Text
+        numberOfLines={1}
+        style={[styles.text, disabled ? { color: Colors.disabledText } : {}]}
+      >
+        {children}
+      </Text>
     </Pressable>
   );
 }

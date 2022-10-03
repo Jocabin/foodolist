@@ -7,7 +7,7 @@ import Ruler from "../components/Ruler";
 
 function ViewRecipe() {
   const route = useRoute();
-  //FIXME: key unique child
+
   return (
     <View style={[GlobalStyles.homePage, { padding: 24 }]}>
       <ScrollView style={styles.scroll}>
@@ -16,9 +16,9 @@ function ViewRecipe() {
             {route.params.title}
           </Text>
 
-          {route.params.tags.map((tag) => {
+          {route.params.tags.map((tag, index) => {
             return (
-              <Text numberOfLines={1} style={GlobalStyles.text}>
+              <Text key={index} numberOfLines={1} style={GlobalStyles.text}>
                 {tag}
               </Text>
             );
@@ -30,9 +30,9 @@ function ViewRecipe() {
             Ingrédients
           </Text>
 
-          {route.params.ingredients.map((ingredient) => {
+          {route.params.ingredients.map((ingredient, index) => {
             return (
-              <Text numberOfLines={1} style={GlobalStyles.text}>
+              <Text key={index} numberOfLines={1} style={GlobalStyles.text}>
                 {ingredient}
               </Text>
             );
@@ -40,7 +40,6 @@ function ViewRecipe() {
         </View>
       </ScrollView>
 
-      {/*  TODO: navigation.push to a page with similar tags*/}
       <PrimaryBtn>Voir une recette similaire</PrimaryBtn>
     </View>
   );

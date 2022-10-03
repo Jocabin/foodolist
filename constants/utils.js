@@ -13,6 +13,13 @@ export const screenDefaultOptions = {
   headerTitle: "",
 };
 
+export const tagsLabelList = [
+  "Chaud",
+  "Froid",
+  "Préparation lente",
+  "Préparation rapide",
+];
+
 // CRUD functions
 export function addRecipe() {
   set(ref(database, "recipes/" + random(0, 20)), {
